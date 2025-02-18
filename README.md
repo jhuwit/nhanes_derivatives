@@ -7,4 +7,4 @@
 
 <!-- badges: end -->
 
-The goal of nhanes_derivatives is to …
+The goal of `nhanes_derivatives` is to
