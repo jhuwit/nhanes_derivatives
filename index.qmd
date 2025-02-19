@@ -1,5 +1,6 @@
 ---
 title: "NHANES Accelerometry and Derivatives"
+author: "John Muschelli"
 format: 
   revealjs:
     theme: default
@@ -11,7 +12,9 @@ format:
     css: logo.css
 bibliography: references.bib
 editor: source
+footer: <div style="text-align:right; padding-right:18em; padding-bottom:0em;"><img src='images/qr.png' width="70" height="70"></div>
 ---
+
 
 ```{r setup, include = FALSE}
 library(knitr)
@@ -24,6 +27,7 @@ include_figure = function(x) {
 
 
 ## NHANES
+
 
 National Health and Nutrition Examination Survey
   
@@ -123,9 +127,6 @@ include_figure("images/mims.png")
 
 New measure!
 
-::: footer
-@john2019open
-:::
 
 ## Map it back to other measures
 
@@ -160,9 +161,7 @@ include_figure("images/mims_comparison.png")
 ::::
 
 
-::: footer
-@karas2022comparison
-:::
+
 
 
 # Rewind 5 years
@@ -212,10 +211,6 @@ Lily Koffman - fingerprint individuals from wrist accelerometry
 ```{r}
 include_figure("images/fingerprint.jpg")
 ```
-
-::: footer
-@koffman2023fingerprinting
-:::
 
 
 
@@ -270,11 +265,6 @@ include_figure("images/oxwalk.png")
 
 :::: 
 
-::: footer
-@neishabouri2022quantification
-
-@oxwalk_data
-:::
 
 
 ## NHANES Data Part Deux
@@ -342,12 +332,6 @@ include_figure("images/stepcount.jpeg")
 :::
 :::: 
 
-::: footer
-@small2024self
-
-
-@oxwalk_data
-:::
 
 ## Compare to Gold Standard
 
@@ -359,13 +343,7 @@ include_figure("images/stepcount.jpeg")
 include_figure("images/comparison_data.png")
 ```
 
-::: footer
-@oxwalk_data
 
-@marea
-
-@clemson_data
-:::
 
 ## Compare to Gold Standard
 
@@ -375,10 +353,6 @@ include_figure("images/comparison_data.png")
 include_figure("images/comparison_methods.png")
 ```
 
-
-::: footer
-@koffman2024evaluating
-:::
 
 
 ## Takehome: stepcount SSL not bad
@@ -399,10 +373,6 @@ Wildly different estimates!
 ```{r}
 include_figure("images/nhanes_steps_table.png")
 ```
-
-::: footer
-@koffman2024comparing
-:::
 
 
 ## Apply to NHANES
