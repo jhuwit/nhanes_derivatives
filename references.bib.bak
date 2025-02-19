@@ -92,26 +92,3 @@
   year={2019},
   publisher={Human Kinetics}
 }
-
-
-@article{neishabouri2022quantification,
-  title={Quantification of acceleration as activity counts in {ActiGraph} wearable},
-  author={Neishabouri, Ali and Nguyen, Joe and Samuelsson, John and Guthrie, Tyler and Biggs, Matt and Wyatt, Jeremy and Cross, Doug and Karas, Marta and Migueles, Jairo H and Khan, Sheraz and others},
-  journal={Scientific Reports},
-  volume={12},
-  number={1},
-  pages={11958},
-  year={2022},
-  publisher={Nature Publishing Group UK London}
-}
-
-
-@article{koffman2023fingerprinting,
-  title={Fingerprinting walking using wrist-worn accelerometers},
-  author={Koffman, Lily and Zhang, Yan and Harezlak, Jaroslaw and Crainiceanu, Ciprian and Leroux, Andrew},
-  journal={Gait \& Posture},
-  volume={103},
-  pages={92--98},
-  year={2023},
-  publisher={Elsevier}
-}
