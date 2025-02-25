@@ -1,6 +1,6 @@
 ---
 title: "NHANES Accelerometry and Derivatives"
-author: "John Muschelli"
+author: "Lily Koffman and John Muschelli"
 format: 
   revealjs:
     theme: default
@@ -195,15 +195,15 @@ Looking back we can see we needed a few things to happen
 
 # Then COVID Happened
 
-# Including a Failed Startup (for me)
+# Including a Failed Startup (for John)
 
 # And Deep Learning Made Strides
 
 
 ## Back from Leave of Absence
 
-Lily Koffman - fingerprint individuals from wrist accelerometry
-[@koffman2023fingerprinting]
+Identify individuals from wrist acceleromtery during walking ("fingerprinting") 
+[@koffman2023fingerprinting], want to scale to large, population-based study 
 
 - But need delineated walking and raw data
 
@@ -357,10 +357,18 @@ include_figure("images/comparison_methods.png")
 
 ## Takehome: stepcount SSL not bad
 
-- `stepcount` (SSL version) good for most data/metric:
+- `stepcount` (SSL version) good for most data/metrics:
 
 ```{r}
 include_figure("images/comparison_results.png")
+```
+
+## Takehome: stepcount SSL not bad
+
+- `stepcount` (SSL version) good for most data/metrics:
+
+```{r}
+include_figure("images/truth_predicted_steps.png")
 ```
 
 
@@ -374,15 +382,30 @@ Wildly different estimates!
 include_figure("images/nhanes_steps_table.png")
 ```
 
+## Apply to NHANES
+
+Mostly similar patterns by age 
+
+```{r}
+include_figure("images/nhanes_steps.png")
+```
+
 
 ## Apply to NHANES
 
-But more predictive of 5-year mortality (even than AC/MIMS)
+And more predictive of 5-year mortality (even than AC/MIMS)
 
 ```{r}
 include_figure("images/nhanes_steps_plot.png")
 ```
 
+## Apply to NHANES 
+
+Dose response relationship between steps and mortality
+
+```{r}
+include_figure("images/dose_response.png")
+```
 
 ## Data Available for Use - PhysioNet
 
@@ -396,5 +419,34 @@ https://physionet.org/static/published-projects/minute-level-step-count-nhanes/1
 include_figure("images/physionet_output.png")
 ```
 
+## Data Available for Use - PhysioNet
+
+Minute level step counts from 5 algorithms: 
+
+- Actilife (from Actigraph) [@ActiLife]
+
+- ADEPT [@adept]
+
+- Oak [@oak]
+
+- Verisense (x2) [@verisense_2022], [@verisense_github]
+
+- stepcount (SSL, RF)  [@small2024self]
+
+Also: 
+
+- MIMS 
+
+- AC
+
+- log10 MIMS
+
+- log10 AC
+
+- Wear prediction (sleep, wake, nonwear) [@nhanes_wear_algo]
+
+- Qualify flag (Y/N)
+
+Ripe for functional data analysis, steps, and physical activity research! 
 
 ## References
