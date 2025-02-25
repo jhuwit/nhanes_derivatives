@@ -390,6 +390,15 @@ Mostly similar patterns by age
 include_figure("images/nhanes_steps.png")
 ```
 
+## Apply to NHANES
+
+Fairly high correlation between methods
+
+```{r}
+include_figure("images/correlation.png")
+
+```
+
 
 ## Apply to NHANES
 
