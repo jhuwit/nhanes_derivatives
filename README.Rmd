@@ -16,4 +16,14 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of `nhanes_derivatives` is to 
+The goal of `nhanes_derivatives` is to describe the derivatives we've created from the raw NHANES data.  Please see [our PhysioNet repository](https://physionet.org/content/minute-level-step-count-nhanes/1.0.0/).  
+
+## NHANES Data
+
+The waves 2011-2014 have wrist-worn accelerometer and the raw data was released in 2022.  You can see data at [2011-2012 wave G](https://wwwn.cdc.gov/nchs/nhanes/search/datapage.aspx?Component=Examination&CycleBeginYear=2011) and [2013-2014 wave H](https://wwwn.cdc.gov/nchs/nhanes/search/datapage.aspx?Component=Examination&CycleBeginYear=2013).  The initial data release used [MIMS units](https://doi.org/10.1123/jmpb.2018-0068), which was a novel measure that was open source as ActiGraph activity counts were one of the most widely used but were closed-source proprietary counts.  In 2022, [ Neishabouri et al. ](https://doi.org/10.1038/s41598-022-16003-x) published the algorithm and methods to create activity counts from raw accelerometer (sub-second) data and released code at https://github.com/actigraph/agcounts.  
+
+Then, in October 2022, the raw NHANES data was released.  The documentation can be seen at https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2013/DataFiles/PAX80_H.htm.  The data is big (> 1Tb compressed) and available via FTP:
+
+> Please note that the total file size for all 6,917 files in PAX80_G is approximately 1.04 TB compressed
+
+The data is available at https://ftp.cdc.gov/pub/pax_g/ and https://ftp.cdc.gov/pub/pax_h/.  The data is in the form of a zipped tarball file for each participant.  
