@@ -6,7 +6,6 @@ format:
     theme: default
     smaller: true
     slide-number: true
-    transition: fade
     progress: true
     logo: images/jhu.png
     css: logo.css
