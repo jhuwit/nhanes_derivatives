@@ -166,7 +166,7 @@ include_figure("images/mims_comparison.png")
 
 # Rewind 5 years
 
-## BIRS 2020: Feb 23, 2020
+## BIRS 2020: Feb 26, 2020
 
 Almost 5 years to today!
 
@@ -289,6 +289,7 @@ include_figure("images/nhanes_raw_doc.png")
 ::: {.column width="50%"}
 
 - Tarballs of all SEQN identifiers (about 7000 per wave)
+
 ```{r}
 include_figure("images/ftp.png")
 ```
@@ -296,6 +297,12 @@ include_figure("images/ftp.png")
 
 ::::
 
+## NHANES Data Part Deux
+
+- [x] Publicly available raw data
+- [x] Open source algorithms 
+- [x] Computating power and storage space to apply algorithms 
+- [x] Results...
 
 ## Still True Today...Mostly
 
@@ -311,7 +318,7 @@ include_figure("images/big_picture.png")
 But what if we didn't need to "train" exactly...
 
 
-## Estimating Steps Raw Data
+## Estimating Steps on Raw Data
 
 :::: {.columns}
 
@@ -320,6 +327,7 @@ But what if we didn't need to "train" exactly...
   - estimate step counts from raw wrist-worn data to 10-second level
 - Uses Self-Supervised Learning (unlabeled and scalable)
 - Applied to UK Biobank then refined on OxWalk [@oxwalk_data]
+- Performance on other datasets and compared to other open-source step counting algorithms? 
 
 ::: 
 
@@ -415,6 +423,17 @@ Dose response relationship between steps and mortality
 ```{r}
 include_figure("images/dose_response.png")
 ```
+
+## Apply to NHANES 
+
+**Takehome** 
+
+- Steps from different algorithms in NHANES correlated and highly predictive of mortality, but very different in absolute value
+- Steps more interpretable for general public than AC or MIMS, but only if we can better define or harmonize what is a "step"
+
+- Still need more large, open training data! 
+
+- Still need mapping between ``stepcount`` steps, Apple/Fitbit steps, "true" steps
 
 ## Data Available for Use - PhysioNet
 

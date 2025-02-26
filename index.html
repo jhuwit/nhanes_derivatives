@@ -465,8 +465,8 @@ Lily Koffman and John Muschelli
 <h1>Rewind 5 years</h1>
 
 </section>
-<section id="birs-2020-feb-23-2020" class="slide level2">
-<h2>BIRS 2020: Feb 23, 2020</h2>
+<section id="birs-2020-feb-26-2020" class="slide level2">
+<h2>BIRS 2020: Feb 26, 2020</h2>
 <p>Almost 5 years to today!</p>
 <p>BIRS conference: <a href="https://workshops.birs.ca/events/20w5109/schedule">Use of Wearable and Implantable Devices in Health Research</a></p>
 <p>Schedule: https://workshops.birs.ca/events/20w5109/schedule</p>
@@ -575,6 +575,15 @@ Lily Koffman and John Muschelli
 </div>
 </div>
 </section>
+<section id="nhanes-data-part-deux-1" class="slide level2">
+<h2>NHANES Data Part Deux</h2>
+<ul class="task-list">
+<li><input type="checkbox" disabled="" checked="">Publicly available raw data</li>
+<li><input type="checkbox" disabled="" checked="">Open source algorithms</li>
+<li><input type="checkbox" disabled="" checked="">Computating power and storage space to apply algorithms</li>
+<li><input type="checkbox" disabled="" checked="">Results…</li>
+</ul>
+</section>
 <section id="still-true-todaymostly" class="slide level2">
 <h2>Still True Today…Mostly</h2>
 <p>John Staudenmayer from BIRS 2020:</p>
@@ -584,8 +593,8 @@ Lily Koffman and John Muschelli
 
 <img data-src="images/big_picture.png" width="1529" class="r-stretch"><p>But what if we didn’t need to “train” exactly…</p>
 </section>
-<section id="estimating-steps-raw-data" class="slide level2">
-<h2>Estimating Steps Raw Data</h2>
+<section id="estimating-steps-on-raw-data" class="slide level2">
+<h2>Estimating Steps on Raw Data</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <ul>
@@ -595,6 +604,7 @@ Lily Koffman and John Muschelli
 </ul></li>
 <li>Uses Self-Supervised Learning (unlabeled and scalable)</li>
 <li>Applied to UK Biobank then refined on OxWalk <span class="citation" data-cites="oxwalk_data">(<a href="#/references" role="doc-biblioref" onclick="">S. R. Small et al. 2022</a>)</span></li>
+<li>Performance on other datasets and compared to other open-source step counting algorithms?</li>
 </ul>
 </div><div class="column" style="width:50%;">
 <div class="cell">
@@ -658,6 +668,16 @@ Lily Koffman and John Muschelli
 <p>Dose response relationship between steps and mortality</p>
 
 <img data-src="images/dose_response.png" width="2000" class="r-stretch"></section>
+<section id="apply-to-nhanes-5" class="slide level2">
+<h2>Apply to NHANES</h2>
+<p><strong>Takehome</strong></p>
+<ul>
+<li><p>Steps from different algorithms in NHANES correlated and highly predictive of mortality, but very different in absolute value</p></li>
+<li><p>Steps more interpretable for general public than AC or MIMS, but only if we can better define or harmonize what is a “step”</p></li>
+<li><p>Still need more large, open training data!</p></li>
+<li><p>Still need mapping between <code>stepcount</code> steps, Apple/Fitbit steps, “true” steps</p></li>
+</ul>
+</section>
 <section id="data-available-for-use---physionet" class="slide level2">
 <h2>Data Available for Use - PhysioNet</h2>
 <p>The data is available (more derivatives to come):</p>
