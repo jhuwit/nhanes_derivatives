@@ -20,8 +20,8 @@ footer: <div style="text-align:right; padding-right:18em; padding-bottom:0em;"><
 library(knitr)
 library(here)
 knitr::opts_chunk$set(echo = FALSE)
-include_figure = function(x) {
-  knitr::include_graphics(here::here(x))
+include_figure = function(x, ...) {
+  knitr::include_graphics(here::here(x), ...)
 }
 ```
 
@@ -320,6 +320,7 @@ But what if we didn't need to "train" exactly...
   - estimate step counts from raw wrist-worn data to 10-second level
 - Uses Self-Supervised Learning (unlabeled and scalable)
 - Applied to UK Biobank then refined on OxWalk [@oxwalk_data]
+- Performance on other datasets and compared to other open-source step counting algorithms? 
 
 ::: 
 
@@ -375,14 +376,62 @@ include_figure("images/nhanes_steps_table.png")
 ```
 
 
+## Mostly similar patterns by age 
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+```{r}
+include_figure("images/nhanes_steps_A.png")
+```
+
+:::
+
+::: {.column width="50%"}
+
+```{r}
+include_figure("images/nhanes_steps_B.png")
+```
+
+:::
+::::
+
 ## Apply to NHANES
 
-But more predictive of 5-year mortality (even than AC/MIMS)
+Fairly high correlation between methods
+
+```{r}
+include_figure("images/correlation.png")
+```
+
+
+## Apply to NHANES
+
+And more predictive of 5-year mortality (even than AC/MIMS)
 
 ```{r}
 include_figure("images/nhanes_steps_plot.png")
 ```
 
+## Apply to NHANES 
+
+Dose response relationship between steps and mortality
+
+```{r}
+include_figure("images/dose_response.png")
+```
+
+## Apply to NHANES 
+
+**Takehome** 
+
+- Steps from different algorithms in NHANES correlated and highly predictive of mortality, but very different in absolute value
+- Steps more interpretable for general public than AC or MIMS, but only if we can better define or harmonize what is a "step"
+
+- Still need more large, open training data! 
+
+- Still need mapping between ``stepcount`` steps, Apple/FitBit steps, "true" steps
 
 ## Data Available for Use - PhysioNet
 
