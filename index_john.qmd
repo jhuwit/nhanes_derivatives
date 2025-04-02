@@ -1,0 +1,400 @@
+---
+title: "NHANES Accelerometry and Derivatives"
+author: "John Muschelli"
+format: 
+  revealjs:
+    theme: default
+    smaller: true
+    slide-number: true
+    transition: fade
+    progress: true
+    logo: images/jhu.png
+    css: logo.css
+bibliography: references.bib
+editor: source
+footer: <div style="text-align:right; padding-right:18em; padding-bottom:0em;"><img src='images/qr.png' width="70" height="70"></div>
+---
+
+
+```{r setup, include = FALSE}
+library(knitr)
+library(here)
+knitr::opts_chunk$set(echo = FALSE)
+include_figure = function(x) {
+  knitr::include_graphics(here::here(x))
+}
+```
+
+
+## NHANES
+
+
+National Health and Nutrition Examination Survey
+  
+  - assess the health and nutritional status of adults and children in the United States through a combination of **interviews**, **physical examinations**, and **laboratory tests**.
+
+:::: {.columns}
+
+::: {.column width="40%"}
+
+- Nationally Representative Sample
+  - Can make claims about US population
+  - Don't forget survey weights!
+- Continuously in 2-year cycles
+- Lots of Data
+
+:::
+
+::: {.column width="60%"}
+
+```{r}
+#| out-width: "120%"
+include_figure("images/nhanes_all.png")
+```
+
+:::
+
+::::
+
+
+## NHANES Accelerometry
+
+:::: {.columns}
+
+::: {.column width="40%"}
+Waves 2011-2012 and 2013-2014 
+
+- Physical Activity Data (under [Examination Data](https://wwwn.cdc.gov/nchs/nhanes/search/datapage.aspx?Component=Examination&CycleBeginYear=2011))
+
+- Actigraph GT3X+, nondominant wrist
+:::
+
+::: {.column width="60%"}
+
+```{r}
+include_figure("images/actigraph_gt3x.png")
+```
+
+:::
+
+::::
+
+
+```{r}
+include_figure("images/nhanes_protocol.png")
+```
+
+
+::: footer
+https://wwwn.cdc.gov/nchs/data/nhanes/public/2011/manuals/2012-Physicial-Activity-Monitor-Procedures-Manual-508.pdf
+:::
+
+
+## NHANES Accelerometry Data Released
+
+Data Released in 2020 (and updated in 2022) summarized at Day/HourMinute
+
+:::: {.columns}
+
+::: {.column width="60%"}
+
+```{r}
+#| out-width: "120%"
+include_figure("images/nhanes_release.png")
+```
+:::
+
+::: {.column width="40%"}
+
+
+```{r}
+#| out-height: "200%"
+include_figure("images/data_doc.png")
+```
+
+:::
+
+::::
+
+
+## NHANES Summary: MIMS
+
+Monitor-independent movement summary for accelerometer data [@john2019open]
+
+```{r}
+include_figure("images/mims.png")
+```
+
+New measure!
+
+
+## Map it back to other measures
+
+We had a lot of research on activity counts
+- Intuition/cutoffs
+
+:::: {.columns}
+
+::: {.column width="40%"}
+
+- Used BLSA data
+  - older population, but still had variability 
+  - GT3X files had been processed to Activity Counts (AC) (no open source method yet)
+  - Used GT3X to create MIMS (MIMSunit R Package)
+
+```{r}
+include_figure("images/blsa.png")
+```
+
+:::
+
+
+::: {.column width="60%"}
+
+Created mapping [@karas2022comparison]
+
+```{r}
+include_figure("images/mims_comparison.png")
+```
+:::
+
+::::
+
+
+
+
+
+# Rewind 5 years
+
+## BIRS 2020: Feb 23, 2020
+
+Almost 5 years to today!
+
+BIRS conference: [Use of Wearable and Implantable Devices in Health Research](https://workshops.birs.ca/events/20w5109/schedule)
+
+Schedule: 
+https://workshops.birs.ca/events/20w5109/schedule  
+
+
+```{r}
+include_figure("images/troiano.png")
+```
+
+- Waiting on Raw Data!
+
+Recorded Videos:
+https://www.birs.ca/events/2020/5-day-workshops/20w5109/videos
+
+
+
+::: {.notes}
+Looking back we can see we needed a few things to happen
+:::
+
+
+
+# Then COVID Happened
+
+# Including a Failed Startup (for me)
+
+# And Deep Learning Made Strides
+
+
+## Back from Leave of Absence
+
+Lily Koffman - fingerprint individuals from wrist accelerometry
+[@koffman2023fingerprinting]
+
+- But need delineated walking and raw data
+
+
+```{r}
+include_figure("images/fingerprint.jpg")
+```
+
+
+
+## 2022: A Number of Things Happen
+
+:::: {.columns}
+
+::: {.column width="40%"}
+
+- Release of NHANES Raw Data
+
+:::
+
+::: {.column width="60%"}
+```{r}
+include_figure("images/nhanes_release2.png")
+```
+:::
+
+----
+
+::: {.column width="40%"}
+
+- Release of Activity Count Algorithm and Source Code to Generate Counts [@neishabouri2022quantification]
+
+:::
+
+
+::: {.column width="60%"}
+
+
+```{r}
+include_figure("images/ag_github.png")
+```
+
+:::
+
+----
+
+::: {.column width="40%"}
+
+- OxWalk data set [@oxwalk_data]
+
+:::
+
+::: {.column width="60%"}
+
+```{r}
+include_figure("images/oxwalk.png")
+```
+:::
+
+:::: 
+
+
+
+## NHANES Data Part Deux
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+Raw data Available
+
+- 80Hz
+- $>$ 1Tb compressed!
+- **Hourly** CSVs and a log file
+
+```{r}
+#| out-width: "150%"
+include_figure("images/nhanes_raw_doc.png")
+```
+
+:::
+
+::: {.column width="50%"}
+
+- Tarballs of all SEQN identifiers (about 7000 per wave)
+```{r}
+include_figure("images/ftp.png")
+```
+:::
+
+::::
+
+
+## Still True Today...Mostly
+
+John Staudenmayer from BIRS 2020: 
+
+::: footer
+From https://www.birs.ca/events/2020/5-day-workshops/20w5109/videos/watch/202002271147-Staudenmayer.html
+:::
+```{r}
+include_figure("images/big_picture.png")
+```
+
+But what if we didn't need to "train" exactly...
+
+
+## Estimating Steps Raw Data
+
+:::: {.columns}
+
+::: {.column width="50%"}
+- `stepcount` (May 25, 2021 initial commit): @small2024self
+  - estimate step counts from raw wrist-worn data to 10-second level
+- Uses Self-Supervised Learning (unlabeled and scalable)
+- Applied to UK Biobank then refined on OxWalk [@oxwalk_data]
+
+::: 
+
+::: {.column width="50%"}
+
+```{r}
+include_figure("images/stepcount.jpeg")
+```
+
+:::
+:::: 
+
+
+## Compare to Gold Standard
+
+@koffman2024evaluating estimates steps using 3 gold standard data sets: OxWalk [@oxwalk_data], MAREA [@marea], and Clemson [@clemson_data]
+
+- iPhone video/force sensitive resistors in shoes/ground facing gold standard
+
+```{r}
+include_figure("images/comparison_data.png")
+```
+
+
+
+## Compare to Gold Standard
+
+@koffman2024evaluating estimates steps from 5 methods on this data:
+
+```{r}
+include_figure("images/comparison_methods.png")
+```
+
+
+
+## Takehome: stepcount SSL not bad
+
+- `stepcount` (SSL version) good for most data/metric:
+
+```{r}
+include_figure("images/comparison_results.png")
+```
+
+
+## Apply to NHANES
+
+@koffman2024comparing applies those methods to NHANES.
+
+Wildly different estimates! 
+
+```{r}
+include_figure("images/nhanes_steps_table.png")
+```
+
+
+## Apply to NHANES
+
+But more predictive of 5-year mortality (even than AC/MIMS)
+
+```{r}
+include_figure("images/nhanes_steps_plot.png")
+```
+
+
+## Data Available for Use - PhysioNet
+
+The data is available (more derivatives to come):
+
+https://physionet.org/content/minute-level-step-count-nhanes/1.0.0/
+
+https://physionet.org/static/published-projects/minute-level-step-count-nhanes/1.0.0/
+
+```{r}
+include_figure("images/physionet_output.png")
+```
+
+
+## References
