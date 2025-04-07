@@ -21,6 +21,7 @@ library(knitr)
 library(here)
 library(dplyr)
 library(magrittr)
+library(ggplot2)
 knitr::opts_chunk$set(echo = FALSE)
 include_figure = function(x, ...) {
   knitr::include_graphics(here::here(x), ...)
@@ -508,7 +509,7 @@ df_pd %>% filter(has_accel) %>%
 
 ## Mean Number of Steps per Day for PD
 
-If you filter for 1368 (95% of a day of "good minutes), we can estimate the mean/SD number of steps in the PD group:
+If you filter for 1368 (95% of a day of "good" minutes), we can estimate the mean/SD number of steps in the PD group:
 
 ```{r}
 steps = readr::read_rds(here::here("data", "nhanes_pd_scsslsteps.rds"))
@@ -518,6 +519,29 @@ steps %>%
             n_minutes = sum(!is.na(steps)), .groups = "drop") %>% 
   filter(n_minutes >= 1368) %>% 
   summarise(across(n_steps, list(mean = base::mean, sd = stats::sd))) 
+```
+
+## Mean Number of Steps per Day for PD
+
+Here is the distribution of mean steps/day with good minute filter for PD (mean in red):
+
+```{r}
+daily = readr::read_rds(here::here("data", "nhanes_pd_daily.rds"))
+df_daily = daily %>% 
+  filter(n_min_steps >= 1368) %>% 
+  group_by(SEQN) %>% 
+  summarise(
+    n_steps = mean(n_steps),
+    n_days = n_distinct(PAXDAYM),
+    .groups = "drop"
+  )
+mn = mean(df_daily$n_steps)
+md = median(df_daily$n_steps)
+df_daily %>% 
+  ggplot(aes(x = n_steps)) + 
+  geom_histogram() + 
+  geom_vline(xintercept = mn, color = "red") 
+
 ```
 
 
