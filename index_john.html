@@ -845,7 +845,8 @@ John Muschelli
 </section>
 <section id="parkinsons-disease-in-nhanes" class="slide level2">
 <h2>Parkinson’s Disease in NHANES</h2>
-<p>Anywhere from 88 to 227 classified PD out of 14693 that have any accelerometry data.</p>
+<p>Anywhere from 68 to 183 classified PD out of 14693 that have any accelerometry data.</p>
+<p>Look at https://github.com/jhuwit/nhanes_derivatives/blob/main/R/estimate_parkinsons.R for example code:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a>df_pd <span class="sc">%&gt;%</span> <span class="fu">filter</span>(has_accel) <span class="sc">%&gt;%</span> </span>
 <span id="cb1-2"><a href=""></a>  <span class="co"># is_parkinsons_prescribed - any ANTI-PARKINSONS</span></span>
@@ -853,23 +854,23 @@ John Muschelli
 <span id="cb1-4"><a href=""></a>  <span class="fu">count</span>(is_parkinsons_2021_prescribed, is_parkinsons_prescribed) <span class="sc">%&gt;%</span> </span>
 <span id="cb1-5"><a href=""></a>  gt<span class="sc">::</span><span class="fu">gt</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="zohupleqhz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#zohupleqhz table {
+<div id="rketryorqx" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#rketryorqx table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#zohupleqhz thead, #zohupleqhz tbody, #zohupleqhz tfoot, #zohupleqhz tr, #zohupleqhz td, #zohupleqhz th {
+#rketryorqx thead, #rketryorqx tbody, #rketryorqx tfoot, #rketryorqx tr, #rketryorqx td, #rketryorqx th {
   border-style: none;
 }
 
-#zohupleqhz p {
+#rketryorqx p {
   margin: 0;
   padding: 0;
 }
 
-#zohupleqhz .gt_table {
+#rketryorqx .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -895,12 +896,12 @@ John Muschelli
   border-left-color: #D3D3D3;
 }
 
-#zohupleqhz .gt_caption {
+#rketryorqx .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#zohupleqhz .gt_title {
+#rketryorqx .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -912,7 +913,7 @@ John Muschelli
   border-bottom-width: 0;
 }
 
-#zohupleqhz .gt_subtitle {
+#rketryorqx .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -924,7 +925,7 @@ John Muschelli
   border-top-width: 0;
 }
 
-#zohupleqhz .gt_heading {
+#rketryorqx .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -936,13 +937,13 @@ John Muschelli
   border-right-color: #D3D3D3;
 }
 
-#zohupleqhz .gt_bottom_border {
+#rketryorqx .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#zohupleqhz .gt_col_headings {
+#rketryorqx .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -957,7 +958,7 @@ John Muschelli
   border-right-color: #D3D3D3;
 }
 
-#zohupleqhz .gt_col_heading {
+#rketryorqx .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -977,7 +978,7 @@ John Muschelli
   overflow-x: hidden;
 }
 
-#zohupleqhz .gt_column_spanner_outer {
+#rketryorqx .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -989,15 +990,15 @@ John Muschelli
   padding-right: 4px;
 }
 
-#zohupleqhz .gt_column_spanner_outer:first-child {
+#rketryorqx .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#zohupleqhz .gt_column_spanner_outer:last-child {
+#rketryorqx .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#zohupleqhz .gt_column_spanner {
+#rketryorqx .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1009,11 +1010,11 @@ John Muschelli
   width: 100%;
 }
 
-#zohupleqhz .gt_spanner_row {
+#rketryorqx .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#zohupleqhz .gt_group_heading {
+#rketryorqx .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1039,7 +1040,7 @@ John Muschelli
   text-align: left;
 }
 
-#zohupleqhz .gt_empty_group_heading {
+#rketryorqx .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1054,15 +1055,15 @@ John Muschelli
   vertical-align: middle;
 }
 
-#zohupleqhz .gt_from_md > :first-child {
+#rketryorqx .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#zohupleqhz .gt_from_md > :last-child {
+#rketryorqx .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#zohupleqhz .gt_row {
+#rketryorqx .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1081,7 +1082,7 @@ John Muschelli
   overflow-x: hidden;
 }
 
-#zohupleqhz .gt_stub {
+#rketryorqx .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1094,7 +1095,7 @@ John Muschelli
   padding-right: 5px;
 }
 
-#zohupleqhz .gt_stub_row_group {
+#rketryorqx .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1108,15 +1109,15 @@ John Muschelli
   vertical-align: top;
 }
 
-#zohupleqhz .gt_row_group_first td {
+#rketryorqx .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#zohupleqhz .gt_row_group_first th {
+#rketryorqx .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#zohupleqhz .gt_summary_row {
+#rketryorqx .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1126,16 +1127,16 @@ John Muschelli
   padding-right: 5px;
 }
 
-#zohupleqhz .gt_first_summary_row {
+#rketryorqx .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#zohupleqhz .gt_first_summary_row.thick {
+#rketryorqx .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#zohupleqhz .gt_last_summary_row {
+#rketryorqx .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1145,7 +1146,7 @@ John Muschelli
   border-bottom-color: #D3D3D3;
 }
 
-#zohupleqhz .gt_grand_summary_row {
+#rketryorqx .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1155,7 +1156,7 @@ John Muschelli
   padding-right: 5px;
 }
 
-#zohupleqhz .gt_first_grand_summary_row {
+#rketryorqx .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1165,7 +1166,7 @@ John Muschelli
   border-top-color: #D3D3D3;
 }
 
-#zohupleqhz .gt_last_grand_summary_row_top {
+#rketryorqx .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1175,11 +1176,11 @@ John Muschelli
   border-bottom-color: #D3D3D3;
 }
 
-#zohupleqhz .gt_striped {
+#rketryorqx .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#zohupleqhz .gt_table_body {
+#rketryorqx .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1188,7 +1189,7 @@ John Muschelli
   border-bottom-color: #D3D3D3;
 }
 
-#zohupleqhz .gt_footnotes {
+#rketryorqx .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1202,7 +1203,7 @@ John Muschelli
   border-right-color: #D3D3D3;
 }
 
-#zohupleqhz .gt_footnote {
+#rketryorqx .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1211,7 +1212,7 @@ John Muschelli
   padding-right: 5px;
 }
 
-#zohupleqhz .gt_sourcenotes {
+#rketryorqx .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1225,7 +1226,7 @@ John Muschelli
   border-right-color: #D3D3D3;
 }
 
-#zohupleqhz .gt_sourcenote {
+#rketryorqx .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1233,72 +1234,72 @@ John Muschelli
   padding-right: 5px;
 }
 
-#zohupleqhz .gt_left {
+#rketryorqx .gt_left {
   text-align: left;
 }
 
-#zohupleqhz .gt_center {
+#rketryorqx .gt_center {
   text-align: center;
 }
 
-#zohupleqhz .gt_right {
+#rketryorqx .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#zohupleqhz .gt_font_normal {
+#rketryorqx .gt_font_normal {
   font-weight: normal;
 }
 
-#zohupleqhz .gt_font_bold {
+#rketryorqx .gt_font_bold {
   font-weight: bold;
 }
 
-#zohupleqhz .gt_font_italic {
+#rketryorqx .gt_font_italic {
   font-style: italic;
 }
 
-#zohupleqhz .gt_super {
+#rketryorqx .gt_super {
   font-size: 65%;
 }
 
-#zohupleqhz .gt_footnote_marks {
+#rketryorqx .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#zohupleqhz .gt_asterisk {
+#rketryorqx .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#zohupleqhz .gt_indent_1 {
+#rketryorqx .gt_indent_1 {
   text-indent: 5px;
 }
 
-#zohupleqhz .gt_indent_2 {
+#rketryorqx .gt_indent_2 {
   text-indent: 10px;
 }
 
-#zohupleqhz .gt_indent_3 {
+#rketryorqx .gt_indent_3 {
   text-indent: 15px;
 }
 
-#zohupleqhz .gt_indent_4 {
+#rketryorqx .gt_indent_4 {
   text-indent: 20px;
 }
 
-#zohupleqhz .gt_indent_5 {
+#rketryorqx .gt_indent_5 {
   text-indent: 25px;
 }
 
-#zohupleqhz .katex-display {
+#rketryorqx .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#zohupleqhz div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#rketryorqx div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1336,6 +1337,18 @@ John Muschelli
 </table>
 
 </div>
+</div>
+</div>
+</section>
+<section id="mean-number-of-steps-per-day-for-pd" class="slide level2">
+<h2>Mean Number of Steps per Day for PD</h2>
+<p>If you filter for 1368 (95% of a day of “good minutes), we can estimate the mean/SD number of steps in the PD group:</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 2
+  n_steps_mean n_steps_sd
+         &lt;dbl&gt;      &lt;dbl&gt;
+1        6851.      5558.</code></pre>
 </div>
 </div>
 </section>

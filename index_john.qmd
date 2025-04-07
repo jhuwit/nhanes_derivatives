@@ -478,12 +478,14 @@ knitr::include_graphics(here::here("images/pd_method.png"))
 ::::
 
 
+
 ## Parkinson's Disease in NHANES
 
 
 ```{r df_park, echo = FALSE}
 df_pd = readr::read_rds(here::here("data", "df_prescribed_parkinsons.rds"))
 df_pd = df_pd %>% 
+  filter(has_accel) %>% 
   mutate(
     both = is_parkinsons_2021_prescribed & is_parkinsons_prescribed,
     either = is_parkinsons_2021_prescribed | is_parkinsons_prescribed
@@ -492,12 +494,30 @@ df_pd = df_pd %>%
 
 Anywhere from `r sum(df_pd$both)` to  `r sum(df_pd$either)` classified PD out of `r sum(df_pd$has_accel)` that have any accelerometry data.
 
+Look at https://github.com/jhuwit/nhanes_derivatives/blob/main/R/estimate_parkinsons.R
+ for example code:
+
 ```{r df_park_table, echo = TRUE}
 df_pd %>% filter(has_accel) %>% 
   # is_parkinsons_prescribed - any ANTI-PARKINSONS
   # is_parkinsons_2021_prescribed - in the codes from supplement
   count(is_parkinsons_2021_prescribed, is_parkinsons_prescribed) %>% 
   gt::gt()
+```
+
+
+## Mean Number of Steps per Day for PD
+
+If you filter for 1368 (95% of a day of "good minutes), we can estimate the mean/SD number of steps in the PD group:
+
+```{r}
+steps = readr::read_rds(here::here("data", "nhanes_pd_scsslsteps.rds"))
+steps %>% 
+  group_by(SEQN, PAXDAYM) %>%
+  summarise(n_steps = sum(steps, na.rm = TRUE), 
+            n_minutes = sum(!is.na(steps)), .groups = "drop") %>% 
+  filter(n_minutes >= 1368) %>% 
+  summarise(across(n_steps, list(mean = base::mean, sd = stats::sd))) 
 ```
 
 
