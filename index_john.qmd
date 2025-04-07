@@ -19,6 +19,8 @@ footer: <div style="text-align:right; padding-right:18em; padding-bottom:0em;"><
 ```{r setup, include = FALSE}
 library(knitr)
 library(here)
+library(dplyr)
+library(magrittr)
 knitr::opts_chunk$set(echo = FALSE)
 include_figure = function(x, ...) {
   knitr::include_graphics(here::here(x), ...)
@@ -444,6 +446,60 @@ https://physionet.org/static/published-projects/minute-level-step-count-nhanes/1
 ```{r}
 include_figure("images/physionet_output.png")
 ```
+
+
+
+## What about a Disease Group (e.g. Parkinson's)
+
+:::: {.columns}
+
+::: {.column width="50%"}
+https://doi.org/10.3390/ijerph18168596
+
+```{r mdpi}
+knitr::include_graphics(here::here("images/pd_mdpi_2021.png"))
+knitr::include_graphics(here::here("images/pd_mdpi_2021_method.png"))
+```
+
+
+
+::: 
+
+::: {.column width="50%"}
+https://doi.org/10.1038/s41598-025-87120-6 and https://doi.org/10.3390/jpm10030069
+```{r sci_report}
+knitr::include_graphics(here::here("images/pd_sci_report.png"))
+knitr::include_graphics(here::here("images/pd_method.png"))
+```
+
+
+
+::: 
+::::
+
+
+## Parkinson's Disease in NHANES
+
+
+```{r df_park, echo = FALSE}
+df_pd = readr::read_rds(here::here("data", "df_prescribed_parkinsons.rds"))
+df_pd = df_pd %>% 
+  mutate(
+    both = is_parkinsons_2021_prescribed & is_parkinsons_prescribed,
+    either = is_parkinsons_2021_prescribed | is_parkinsons_prescribed
+  )
+```
+
+Anywhere from `r sum(df_pd$both)` to  `r sum(df_pd$either)` classified PD out of `r sum(df_pd$has_accel)` that have any accelerometry data.
+
+```{r df_park_table, echo = TRUE}
+df_pd %>% filter(has_accel) %>% 
+  # is_parkinsons_prescribed - any ANTI-PARKINSONS
+  # is_parkinsons_2021_prescribed - in the codes from supplement
+  count(is_parkinsons_2021_prescribed, is_parkinsons_prescribed) %>% 
+  gt::gt()
+```
+
 
 
 ## References
