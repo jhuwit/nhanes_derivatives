@@ -12,7 +12,7 @@ format:
     css: logo.css
 bibliography: references.bib
 editor: source
-footer: <div style="text-align:right; padding-right:18em; padding-bottom:0em;"><img src='images/qr.png' width="70" height="70"></div>
+footer: <div style="text-align:right; padding-right:18em; padding-bottom:0em;"><img src='images/qr_eba.png' width="70" height="70"></div>
 ---
 
 
@@ -222,6 +222,7 @@ include_figure("images/nhanes_raw_doc.png")
 
 - Tarballs of all IDs ($\approx$ 7000 per wave)
 ```{r}
+#| out-width: "70%"
 include_figure("images/ftp.png")
 ```
 :::
@@ -325,8 +326,7 @@ df_pd = df_pd %>%
 
 Anywhere from `r sum(df_pd$both)` to  `r sum(df_pd$either)` classified PD out of `r sum(df_pd$has_accel)` that have any accelerometry data.
 
-Look at https://github.com/jhuwit/nhanes_derivatives/blob/main/R/estimate_parkinsons.R
- for example code:
+[https://github.com/jhuwit/nhanes_derivatives/blob/main/R/estimate_parkinsons.R](https://github.com/jhuwit/nhanes_derivatives/blob/main/R/estimate_parkinsons.R) example code:
 
 ```{r df_park_table, echo = FALSE}
 df_pd %>% filter(has_accel) %>% 
