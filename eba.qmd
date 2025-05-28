@@ -1,0 +1,343 @@
+---
+title: "NHANES Accelerometry and Derivatives"
+author: "John Muschelli, Lily Koffman, and Ciprian Crainiceanu"
+format: 
+  revealjs:
+    theme: default
+    smaller: true
+    slide-number: true
+    transition: fade
+    progress: true
+    logo: images/jhu.png
+    css: logo.css
+bibliography: references.bib
+editor: source
+footer: <div style="text-align:right; padding-right:18em; padding-bottom:0em;"><img src='images/qr.png' width="70" height="70"></div>
+---
+
+
+```{r setup, include = FALSE}
+library(knitr)
+library(here)
+library(dplyr)
+library(magrittr)
+library(ggplot2)
+knitr::opts_chunk$set(echo = FALSE)
+include_figure = function(x, ...) {
+  knitr::include_graphics(here::here(x), ...)
+}
+```
+
+
+## NHANES
+
+
+National Health and Nutrition Examination Survey
+  
+  - assess the health and nutritional status of adults and children in the United States through a combination of **interviews**, **physical examinations**, and **laboratory tests**.
+
+:::: {.columns}
+
+::: {.column width="40%"}
+
+- Nationally Representative Sample
+  - Can make claims about US population
+  - Don't forget survey weights!
+- Continuously in 2-year cycles
+- Lots of Data
+
+:::
+
+::: {.column width="60%"}
+
+```{r}
+#| out-width: "120%"
+include_figure("images/nhanes_all.png")
+```
+
+:::
+
+::::
+
+
+## NHANES Accelerometry
+
+:::: {.columns}
+
+::: {.column width="40%"}
+Waves 2011-2012 and 2013-2014 
+
+- Physical Activity Data (under [Examination Data](https://wwwn.cdc.gov/nchs/nhanes/search/datapage.aspx?Component=Examination&CycleBeginYear=2011))
+
+- Actigraph GT3X+, nondominant wrist
+:::
+
+::: {.column width="60%"}
+
+```{r}
+include_figure("images/actigraph_gt3x.png")
+```
+
+:::
+
+::::
+
+
+```{r}
+include_figure("images/nhanes_protocol.png")
+```
+
+
+::: footer
+https://wwwn.cdc.gov/nchs/data/nhanes/public/2011/manuals/2012-Physicial-Activity-Monitor-Procedures-Manual-508.pdf
+:::
+
+
+
+## NHANES Summary: MIMS
+
+New measure!?
+
+
+Monitor-independent movement summary for accelerometer data 
+non-proprietary, open-source, device-independent universal summary metric developed by researchers at Northeastern University [@john2019open]
+
+
+```{r}
+#| out-width: "120%"
+include_figure("images/nhanes_release.png")
+```
+
+
+
+## MIMS intuition/cutoffs?
+
+
+:::: {.columns}
+
+::: {.column width="40%"}
+
+- Work with Jen Schrack and Marta Karas
+
+- Used BLSA data
+  - older population, but still had variability 
+  - GT3X files had been processed to Activity Counts (AC) (no open source method yet)
+  - Used GT3X to create MIMS (`MIMSunit` R Package)
+
+```{r}
+include_figure("images/blsa.png")
+```
+
+:::
+
+
+::: {.column width="60%"}
+
+Created mapping [@karas2022comparison]
+
+```{r}
+include_figure("images/mims_comparison.png")
+```
+:::
+
+::::
+
+
+
+
+## 2022: A Number of Things Happen
+
+:::: {.columns}
+
+::: {.column width="40%"}
+
+- Release of NHANES Raw Data
+
+:::
+
+::: {.column width="60%"}
+```{r}
+include_figure("images/nhanes_release2.png")
+```
+:::
+
+----
+
+::: {.column width="40%"}
+
+- Release of Activity Count Algorithm and Source Code to Generate Counts [@neishabouri2022quantification]
+
+:::
+
+
+::: {.column width="60%"}
+
+
+```{r}
+include_figure("images/ag_github.png")
+```
+
+:::
+
+----
+
+::: {.column width="40%"}
+
+- OxWalk data set [@oxwalk_data]. 
+- @small2024self estimate 10-s level step counts from raw wrist-worn data using Self-Supervised Learning (SSL) `stepcount` (May 25, 2021 initial commit)
+
+:::
+
+::: {.column width="60%"}
+
+```{r}
+include_figure("images/oxwalk.png")
+```
+:::
+
+:::: 
+
+
+
+## NHANES Data Part Deux
+
+:::: {.columns}
+
+::: {.column width="55%"}
+
+Raw data Available
+
+- 80Hz
+- $>$ 1Tb compressed!
+- **Hourly** CSVs and a log file
+
+```{r}
+#| out-width: "150%"
+include_figure("images/nhanes_raw_doc.png")
+```
+
+:::
+
+::: {.column width="45%"}
+
+- Tarballs of all IDs ($\approx$ 7000 per wave)
+```{r}
+include_figure("images/ftp.png")
+```
+:::
+
+::::
+
+# Methods use Raw Data 
+
+
+## Apply to NHANES
+
+@koffman2024comparing applies those methods to NHANES (survey-weighted).
+
+Wildly different estimates! 
+
+```{r}
+include_figure("images/nhanes_steps_table.png")
+```
+
+
+## Steps Predict Mortality
+
+And more predictive of 5-year mortality (even than AC/MIMS)
+
+```{r}
+include_figure("images/nhanes_steps_plot.png")
+```
+
+## Data Available for Use - PhysioNet
+
+The data is available (more derivatives to come):
+
+[https://physionet.org/content/minute-level-step-count-nhanes/1.0.0/](https://physionet.org/content/minute-level-step-count-nhanes/1.0.0/)
+
+```{r}
+include_figure("images/physionet_output.png")
+```
+
+
+
+## NHANES Data Part Do
+
+Done (check mark indicates uploaded to PhysioNet
+
+- [x] Activity Counts (minute level)
+  - [x] Wear time (Choi/Troiano)
+  - [ ] "ActiGraph" CSVs
+  - [ ] Sleep Scoring (Sadeh/Cole-Kripke) + Tudor-Locke
+- [x] Flags
+- [x] MIMs
+- [ ] Step counts: Stepcount (x2), ActiLife, ADEPT, Oak, Verisense
+- [x] GGIR output (including sleep)
+- [ ] Mortality
+- [ ] Demographics (gender/age/ID uploaded/survey weights)
+- [ ] Your next analysis target?
+
+
+## What about Disease Groups?
+
+Can estimate a group by prescriptions (bias....):
+
+:::: {.columns}
+
+::: {.column width="50%"}
+https://doi.org/10.3390/ijerph18168596
+
+```{r mdpi}
+knitr::include_graphics(here::here("images/pd_mdpi_2021.png"))
+knitr::include_graphics(here::here("images/pd_mdpi_2021_method.png"))
+```
+
+
+
+::: 
+
+::: {.column width="50%"}
+https://doi.org/10.1038/s41598-025-87120-6 and https://doi.org/10.3390/jpm10030069
+```{r sci_report}
+knitr::include_graphics(here::here("images/pd_sci_report.png"))
+knitr::include_graphics(here::here("images/pd_method.png"))
+```
+
+
+
+::: 
+::::
+
+
+## Parkinson's Disease in NHANES
+
+
+```{r df_park, echo = FALSE}
+df_pd = readr::read_rds(here::here("data", "df_prescribed_parkinsons.rds"))
+df_pd = df_pd %>% 
+  filter(has_accel) %>% 
+  mutate(
+    both = is_parkinsons_2021_prescribed & is_parkinsons_prescribed,
+    either = is_parkinsons_2021_prescribed | is_parkinsons_prescribed
+  )
+```
+
+Anywhere from `r sum(df_pd$both)` to  `r sum(df_pd$either)` classified PD out of `r sum(df_pd$has_accel)` that have any accelerometry data.
+
+Look at https://github.com/jhuwit/nhanes_derivatives/blob/main/R/estimate_parkinsons.R
+ for example code:
+
+```{r df_park_table, echo = FALSE}
+df_pd %>% filter(has_accel) %>% 
+  # is_parkinsons_prescribed - any ANTI-PARKINSONS
+  # is_parkinsons_2021_prescribed - in the codes from supplement
+  count(is_parkinsons_2021_prescribed, is_parkinsons_prescribed) %>% 
+  gt::gt()
+```
+
+
+
+
+
+## References

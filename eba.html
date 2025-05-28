@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="emory_files/libs/clipboard/clipboard.min.js"></script>
-<script src="emory_files/libs/quarto-html/tabby.min.js"></script>
-<script src="emory_files/libs/quarto-html/popper.min.js"></script>
-<script src="emory_files/libs/quarto-html/tippy.umd.min.js"></script>
-<link href="emory_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="emory_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="emory_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="emory_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<script src="eba_files/libs/clipboard/clipboard.min.js"></script>
+<script src="eba_files/libs/quarto-html/tabby.min.js"></script>
+<script src="eba_files/libs/quarto-html/popper.min.js"></script>
+<script src="eba_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="eba_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="eba_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="eba_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="eba_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.5.57">
 
-  <meta name="author" content="John Muschelli">
+  <meta name="author" content="John Muschelli, Lily Koffman, and Ciprian Crainiceanu">
   <title>NHANES Accelerometry and Derivatives</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="emory_files/libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="emory_files/libs/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="eba_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="eba_files/libs/revealjs/dist/reveal.css">
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -29,71 +29,6 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-    /* CSS for syntax highlighting */
-    pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { line-height: 1.25; }
-    pre > code.sourceCode > span:empty { height: 1.2em; }
-    .sourceCode { overflow: visible; }
-    code.sourceCode > span { color: inherit; text-decoration: inherit; }
-    div.sourceCode { margin: 1em 0; }
-    pre.sourceCode { margin: 0; }
-    @media screen {
-    div.sourceCode { overflow: auto; }
-    }
-    @media print {
-    pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-    }
-    pre.numberSource code
-      { counter-reset: source-line 0; }
-    pre.numberSource code > span
-      { position: relative; left: -4em; counter-increment: source-line; }
-    pre.numberSource code > span > a:first-child::before
-      { content: counter(source-line);
-        position: relative; left: -1em; text-align: right; vertical-align: baseline;
-        border: none; display: inline-block;
-        -webkit-touch-callout: none; -webkit-user-select: none;
-        -khtml-user-select: none; -moz-user-select: none;
-        -ms-user-select: none; user-select: none;
-        padding: 0 4px; width: 4em;
-        color: #aaaaaa;
-      }
-    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-    div.sourceCode
-      { color: #003b4f; background-color: #f1f3f5; }
-    @media screen {
-    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-    }
-    code span { color: #003b4f; } /* Normal */
-    code span.al { color: #ad0000; } /* Alert */
-    code span.an { color: #5e5e5e; } /* Annotation */
-    code span.at { color: #657422; } /* Attribute */
-    code span.bn { color: #ad0000; } /* BaseN */
-    code span.bu { } /* BuiltIn */
-    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
-    code span.ch { color: #20794d; } /* Char */
-    code span.cn { color: #8f5902; } /* Constant */
-    code span.co { color: #5e5e5e; } /* Comment */
-    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
-    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
-    code span.dt { color: #ad0000; } /* DataType */
-    code span.dv { color: #ad0000; } /* DecVal */
-    code span.er { color: #ad0000; } /* Error */
-    code span.ex { } /* Extension */
-    code span.fl { color: #ad0000; } /* Float */
-    code span.fu { color: #4758ab; } /* Function */
-    code span.im { color: #00769e; } /* Import */
-    code span.in { color: #5e5e5e; } /* Information */
-    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
-    code span.op { color: #5e5e5e; } /* Operator */
-    code span.ot { color: #003b4f; } /* Other */
-    code span.pp { color: #ad0000; } /* Preprocessor */
-    code span.sc { color: #5e5e5e; } /* SpecialChar */
-    code span.ss { color: #20794d; } /* SpecialString */
-    code span.st { color: #20794d; } /* String */
-    code span.va { color: #111111; } /* Variable */
-    code span.vs { color: #20794d; } /* VerbatimString */
-    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     /* CSS for citations */
     div.csl-bib-body { }
     div.csl-entry {
@@ -115,12 +50,12 @@
     div.csl-indent {
       margin-left: 2em;
     }  </style>
-  <link rel="stylesheet" href="emory_files/libs/revealjs/dist/theme/quarto.css">
+  <link rel="stylesheet" href="eba_files/libs/revealjs/dist/theme/quarto.css">
   <link rel="stylesheet" href="logo.css">
-  <link href="emory_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="emory_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="emory_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="emory_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <link href="eba_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="eba_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="eba_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="eba_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
 
   .callout {
@@ -417,7 +352,7 @@
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-John Muschelli 
+John Muschelli, Lily Koffman, and Ciprian Crainiceanu 
 </div>
 </div>
 </div>
@@ -485,49 +420,23 @@ John Muschelli
 <p>https://wwwn.cdc.gov/nchs/data/nhanes/public/2011/manuals/2012-Physicial-Activity-Monitor-Procedures-Manual-508.pdf</p>
 </div>
 </section>
-<section id="nhanes-accelerometry-data-released" class="slide level2">
-<h2>NHANES Accelerometry Data Released</h2>
-<p>Data Released in 2020 (and updated in 2022) summarized at Day/HourMinute</p>
-<div class="columns">
-<div class="column" style="width:60%;">
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="images/nhanes_release.png" style="width:120.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-</div><div class="column" style="width:40%;">
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="images/data_doc.png" style="height:200.0%" width="1149"></p>
-</figure>
-</div>
-</div>
-</div>
-</div></div>
-</section>
 <section id="nhanes-summary-mims" class="slide level2">
 <h2>NHANES Summary: MIMS</h2>
-<p>Monitor-independent movement summary for accelerometer data <span class="citation" data-cites="john2019open">(<a href="#/references" role="doc-biblioref" onclick="">John et al. 2019</a>)</span></p>
+<p>New measure!?</p>
+<p>Monitor-independent movement summary for accelerometer data non-proprietary, open-source, device-independent universal summary metric developed by researchers at Northeastern University <span class="citation" data-cites="john2019open">(<a href="#/references" role="doc-biblioref" onclick="">John et al. 2019</a>)</span></p>
 
-<img data-src="images/mims.png" width="1111" class="r-stretch"><p>New measure!</p>
-</section>
-<section id="map-it-back-to-other-measures" class="slide level2">
-<h2>Map it back to other measures</h2>
-<p>We had a lot of research on activity counts - Intuition/cutoffs</p>
+<img data-src="images/nhanes_release.png" style="width:120.0%" class="r-stretch"></section>
+<section id="mims-intuitioncutoffs" class="slide level2">
+<h2>MIMS intuition/cutoffs?</h2>
 <div class="columns">
 <div class="column" style="width:40%;">
 <ul>
-<li>Used BLSA data
+<li><p>Work with Jen Schrack and Marta Karas</p></li>
+<li><p>Used BLSA data</p>
 <ul>
 <li>older population, but still had variability</li>
 <li>GT3X files had been processed to Activity Counts (AC) (no open source method yet)</li>
-<li>Used GT3X to create MIMS (MIMSunit R Package)</li>
+<li>Used GT3X to create MIMS (<code>MIMSunit</code> R Package)</li>
 </ul></li>
 </ul>
 <div class="cell">
@@ -552,58 +461,6 @@ John Muschelli
 </div>
 </div></div>
 </section>
-<section>
-<section id="rewind-5-years" class="title-slide slide level1 center">
-<h1>Rewind 5 years</h1>
-
-</section>
-<section id="birs-2020-feb-23-2020" class="slide level2">
-<h2>BIRS 2020: Feb 23, 2020</h2>
-<p>Almost 5 years to today!</p>
-<p>BIRS conference: <a href="https://workshops.birs.ca/events/20w5109/schedule">Use of Wearable and Implantable Devices in Health Research</a></p>
-<p>Schedule: https://workshops.birs.ca/events/20w5109/schedule</p>
-
-<img data-src="images/troiano.png" width="1065" class="r-stretch"><ul>
-<li>Waiting on Raw Data!</li>
-</ul>
-<p>Recorded Videos: https://www.birs.ca/events/2020/5-day-workshops/20w5109/videos</p>
-<aside class="notes">
-<p>Looking back we can see we needed a few things to happen</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section></section>
-<section id="then-covid-happened" class="title-slide slide level1 center">
-<h1>Then COVID Happened</h1>
-
-</section>
-
-<section id="including-a-failed-startup-for-me" class="title-slide slide level1 center">
-<h1>Including a Failed Startup (for me)</h1>
-
-</section>
-
-<section>
-<section id="and-deep-learning-made-strides" class="title-slide slide level1 center">
-<h1>And Deep Learning Made Strides</h1>
-
-</section>
-<section id="back-from-leave-of-absence" class="slide level2">
-<h2>Back from Leave of Absence</h2>
-<p>Lily Koffman - fingerprint individuals from wrist accelerometry <span class="citation" data-cites="koffman2023fingerprinting">(<a href="#/references" role="doc-biblioref" onclick="">Lily Koffman et al. 2023</a>)</span></p>
-<ul>
-<li>But need delineated walking and raw data</li>
-</ul>
-
-<img data-src="images/fingerprint.jpg" width="1746" class="r-stretch"></section>
 <section id="a-number-of-things-happen" class="slide level2">
 <h2>2022: A Number of Things Happen</h2>
 <div class="columns">
@@ -637,7 +494,8 @@ John Muschelli
 </div>
 </div><hr><div class="column" style="width:40%;">
 <ul>
-<li>OxWalk data set <span class="citation" data-cites="oxwalk_data">(<a href="#/references" role="doc-biblioref" onclick="">S. R. Small et al. 2022</a>)</span></li>
+<li>OxWalk data set <span class="citation" data-cites="oxwalk_data">(<a href="#/references" role="doc-biblioref" onclick="">S. R. Small et al. 2022</a>)</span>.</li>
+<li><span class="citation" data-cites="small2024self">Scott R. Small et al. (<a href="#/references" role="doc-biblioref" onclick="">2024</a>)</span> estimate 10-s level step counts from raw wrist-worn data using Self-Supervised Learning (SSL) <code>stepcount</code> (May 25, 2021 initial commit)</li>
 </ul>
 </div><div class="column" style="width:60%;">
 <div class="cell">
@@ -654,7 +512,7 @@ John Muschelli
 <section id="nhanes-data-part-deux" class="slide level2">
 <h2>NHANES Data Part Deux</h2>
 <div class="columns">
-<div class="column" style="width:50%;">
+<div class="column" style="width:55%;">
 <p>Raw data Available</p>
 <ul>
 <li>80Hz</li>
@@ -670,9 +528,9 @@ John Muschelli
 </div>
 </div>
 </div>
-</div><div class="column" style="width:50%;">
+</div><div class="column" style="width:45%;">
 <ul>
-<li>Tarballs of all SEQN identifiers (about 7000 per wave)</li>
+<li>Tarballs of all IDs (<span class="math inline">\(\approx\)</span> 7000 per wave)</li>
 </ul>
 <div class="cell">
 <div class="cell-output-display">
@@ -685,125 +543,50 @@ John Muschelli
 </div>
 </div></div>
 </section>
-<section id="still-true-todaymostly" class="slide level2">
-<h2>Still True Today…Mostly</h2>
-<p>John Staudenmayer from BIRS 2020:</p>
-<div class="footer">
-<p>From https://www.birs.ca/events/2020/5-day-workshops/20w5109/videos/watch/202002271147-Staudenmayer.html</p>
-</div>
+<section>
+<section id="methods-use-raw-data" class="title-slide slide level1 center">
+<h1>Methods use Raw Data</h1>
 
-<img data-src="images/big_picture.png" width="1529" class="r-stretch"><p>But what if we didn’t need to “train” exactly…</p>
 </section>
-<section id="estimating-steps-raw-data" class="slide level2">
-<h2>Estimating Steps Raw Data</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<ul>
-<li><code>stepcount</code> (May 25, 2021 initial commit): <span class="citation" data-cites="small2024self">Scott R. Small et al. (<a href="#/references" role="doc-biblioref" onclick="">2024</a>)</span>
-<ul>
-<li>estimate step counts from raw wrist-worn data to 10-second level</li>
-</ul></li>
-<li>Uses Self-Supervised Learning (unlabeled and scalable)</li>
-<li>Applied to UK Biobank then refined on OxWalk <span class="citation" data-cites="oxwalk_data">(<a href="#/references" role="doc-biblioref" onclick="">S. R. Small et al. 2022</a>)</span></li>
-<li>Performance on other datasets and compared to other open-source step counting algorithms?</li>
-</ul>
-</div><div class="column" style="width:50%;">
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="images/stepcount.jpeg" width="600"></p>
-</figure>
-</div>
-</div>
-</div>
-</div></div>
-</section>
-<section id="compare-to-gold-standard" class="slide level2">
-<h2>Compare to Gold Standard</h2>
-<p><span class="citation" data-cites="koffman2024evaluating">Lily Koffman and Muschelli (<a href="#/references" role="doc-biblioref" onclick="">2024</a>)</span> estimates steps using 3 gold standard data sets: OxWalk <span class="citation" data-cites="oxwalk_data">(<a href="#/references" role="doc-biblioref" onclick="">S. R. Small et al. 2022</a>)</span>, MAREA <span class="citation" data-cites="marea">(<a href="#/references" role="doc-biblioref" onclick="">Khandelwal and Wickström 2017</a>)</span>, and Clemson <span class="citation" data-cites="clemson_data">(<a href="#/references" role="doc-biblioref" onclick="">Mattfeld, Jesch, and Hoover 2017</a>)</span></p>
-<ul>
-<li>iPhone video/force sensitive resistors in shoes/ground facing gold standard</li>
-</ul>
-
-<img data-src="images/comparison_data.png" width="848" class="r-stretch"></section>
-<section id="compare-to-gold-standard-1" class="slide level2">
-<h2>Compare to Gold Standard</h2>
-<p><span class="citation" data-cites="koffman2024evaluating">Lily Koffman and Muschelli (<a href="#/references" role="doc-biblioref" onclick="">2024</a>)</span> estimates steps from 5 methods on this data:</p>
-
-<img data-src="images/comparison_methods.png" width="832" class="r-stretch"></section>
-<section id="takehome-stepcount-ssl-not-bad" class="slide level2">
-<h2>Takehome: stepcount SSL not bad</h2>
-<ul>
-<li><code>stepcount</code> (SSL version) good for most data/metric:</li>
-</ul>
-
-<img data-src="images/comparison_results.png" width="1397" class="r-stretch"></section>
 <section id="apply-to-nhanes" class="slide level2">
 <h2>Apply to NHANES</h2>
-<p><span class="citation" data-cites="koffman2024comparing">L. Koffman, Crainiceanu, and Muschelli (<a href="#/references" role="doc-biblioref" onclick="">2024</a>)</span> applies those methods to NHANES.</p>
+<p><span class="citation" data-cites="koffman2024comparing">Koffman, Crainiceanu, and Muschelli (<a href="#/references" role="doc-biblioref" onclick="">2024</a>)</span> applies those methods to NHANES (survey-weighted).</p>
 <p>Wildly different estimates!</p>
 
 <img data-src="images/nhanes_steps_table.png" width="874" class="r-stretch"></section>
-<section id="mostly-similar-patterns-by-age" class="slide level2">
-<h2>Mostly similar patterns by age</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="images/nhanes_steps_A.png" width="2836"></p>
-</figure>
-</div>
-</div>
-</div>
-</div><div class="column" style="width:50%;">
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure>
-<p><img data-src="images/nhanes_steps_B.png" width="2798"></p>
-</figure>
-</div>
-</div>
-</div>
-</div></div>
-</section>
-<section id="apply-to-nhanes-1" class="slide level2">
-<h2>Apply to NHANES</h2>
-<p>Fairly high correlation between methods</p>
-
-<img data-src="images/correlation.png" width="539" class="r-stretch"></section>
-<section id="apply-to-nhanes-2" class="slide level2">
-<h2>Apply to NHANES</h2>
+<section id="steps-predict-mortality" class="slide level2">
+<h2>Steps Predict Mortality</h2>
 <p>And more predictive of 5-year mortality (even than AC/MIMS)</p>
 
 <img data-src="images/nhanes_steps_plot.png" width="787" class="r-stretch"></section>
-<section id="apply-to-nhanes-3" class="slide level2">
-<h2>Apply to NHANES</h2>
-<p>Dose response relationship between steps and mortality</p>
-
-<img data-src="images/dose_response.png" width="2000" class="r-stretch"></section>
-<section id="apply-to-nhanes-4" class="slide level2">
-<h2>Apply to NHANES</h2>
-<p><strong>Takehome</strong></p>
-<ul>
-<li><p>Steps from different algorithms in NHANES correlated and highly predictive of mortality, but very different in absolute value</p></li>
-<li><p>Steps more interpretable for general public than AC or MIMS, but only if we can better define or harmonize what is a “step”</p></li>
-<li><p>Still need more large, open training data!</p></li>
-<li><p>Still need mapping between <code>stepcount</code> steps, Apple/FitBit steps, “true” steps</p></li>
-</ul>
-</section>
 <section id="data-available-for-use---physionet" class="slide level2">
 <h2>Data Available for Use - PhysioNet</h2>
 <p>The data is available (more derivatives to come):</p>
-<p>https://physionet.org/content/minute-level-step-count-nhanes/1.0.0/</p>
-<p>https://physionet.org/static/published-projects/minute-level-step-count-nhanes/1.0.0/</p>
+<p><a href="https://physionet.org/content/minute-level-step-count-nhanes/1.0.0/">https://physionet.org/content/minute-level-step-count-nhanes/1.0.0/</a></p>
 
 <img data-src="images/physionet_output.png" width="1170" class="r-stretch"></section>
-<section id="what-about-a-disease-group-e.g.-parkinsons" class="slide level2">
-<h2>What about a Disease Group (e.g.&nbsp;Parkinson’s)</h2>
+<section id="nhanes-data-part-do" class="slide level2">
+<h2>NHANES Data Part Do</h2>
+<p>Done (check mark indicates uploaded to PhysioNet</p>
+<ul class="task-list">
+<li><label><input type="checkbox" checked="">Activity Counts (minute level)</label>
+<ul class="task-list">
+<li><label><input type="checkbox" checked="">Wear time (Choi/Troiano)</label></li>
+<li><label><input type="checkbox">“ActiGraph” CSVs</label></li>
+<li><label><input type="checkbox">Sleep Scoring (Sadeh/Cole-Kripke) + Tudor-Locke</label></li>
+</ul></li>
+<li><label><input type="checkbox" checked="">Flags</label></li>
+<li><label><input type="checkbox" checked="">MIMs</label></li>
+<li><label><input type="checkbox">Step counts: Stepcount (x2), ActiLife, ADEPT, Oak, Verisense</label></li>
+<li><label><input type="checkbox" checked="">GGIR output (including sleep)</label></li>
+<li><label><input type="checkbox">Mortality</label></li>
+<li><label><input type="checkbox">Demographics (gender/age/ID uploaded/survey weights)</label></li>
+<li><label><input type="checkbox">Your next analysis target?</label></li>
+</ul>
+</section>
+<section id="what-about-disease-groups" class="slide level2">
+<h2>What about Disease Groups?</h2>
+<p>Can estimate a group by prescriptions (bias….):</p>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p>https://doi.org/10.3390/ijerph18168596</p>
@@ -848,29 +631,24 @@ John Muschelli
 <p>Anywhere from 68 to 183 classified PD out of 14693 that have any accelerometry data.</p>
 <p>Look at https://github.com/jhuwit/nhanes_derivatives/blob/main/R/estimate_parkinsons.R for example code:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a>df_pd <span class="sc">%&gt;%</span> <span class="fu">filter</span>(has_accel) <span class="sc">%&gt;%</span> </span>
-<span id="cb1-2"><a href=""></a>  <span class="co"># is_parkinsons_prescribed - any ANTI-PARKINSONS</span></span>
-<span id="cb1-3"><a href=""></a>  <span class="co"># is_parkinsons_2021_prescribed - in the codes from supplement</span></span>
-<span id="cb1-4"><a href=""></a>  <span class="fu">count</span>(is_parkinsons_2021_prescribed, is_parkinsons_prescribed) <span class="sc">%&gt;%</span> </span>
-<span id="cb1-5"><a href=""></a>  gt<span class="sc">::</span><span class="fu">gt</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="vwhbadlpny" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#vwhbadlpny table {
+<div id="eqjywaqlof" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#eqjywaqlof table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#vwhbadlpny thead, #vwhbadlpny tbody, #vwhbadlpny tfoot, #vwhbadlpny tr, #vwhbadlpny td, #vwhbadlpny th {
+#eqjywaqlof thead, #eqjywaqlof tbody, #eqjywaqlof tfoot, #eqjywaqlof tr, #eqjywaqlof td, #eqjywaqlof th {
   border-style: none;
 }
 
-#vwhbadlpny p {
+#eqjywaqlof p {
   margin: 0;
   padding: 0;
 }
 
-#vwhbadlpny .gt_table {
+#eqjywaqlof .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -896,12 +674,12 @@ John Muschelli
   border-left-color: #D3D3D3;
 }
 
-#vwhbadlpny .gt_caption {
+#eqjywaqlof .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#vwhbadlpny .gt_title {
+#eqjywaqlof .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -913,7 +691,7 @@ John Muschelli
   border-bottom-width: 0;
 }
 
-#vwhbadlpny .gt_subtitle {
+#eqjywaqlof .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -925,7 +703,7 @@ John Muschelli
   border-top-width: 0;
 }
 
-#vwhbadlpny .gt_heading {
+#eqjywaqlof .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -937,13 +715,13 @@ John Muschelli
   border-right-color: #D3D3D3;
 }
 
-#vwhbadlpny .gt_bottom_border {
+#eqjywaqlof .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#vwhbadlpny .gt_col_headings {
+#eqjywaqlof .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -958,7 +736,7 @@ John Muschelli
   border-right-color: #D3D3D3;
 }
 
-#vwhbadlpny .gt_col_heading {
+#eqjywaqlof .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -978,7 +756,7 @@ John Muschelli
   overflow-x: hidden;
 }
 
-#vwhbadlpny .gt_column_spanner_outer {
+#eqjywaqlof .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -990,15 +768,15 @@ John Muschelli
   padding-right: 4px;
 }
 
-#vwhbadlpny .gt_column_spanner_outer:first-child {
+#eqjywaqlof .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#vwhbadlpny .gt_column_spanner_outer:last-child {
+#eqjywaqlof .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#vwhbadlpny .gt_column_spanner {
+#eqjywaqlof .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1010,11 +788,11 @@ John Muschelli
   width: 100%;
 }
 
-#vwhbadlpny .gt_spanner_row {
+#eqjywaqlof .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#vwhbadlpny .gt_group_heading {
+#eqjywaqlof .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1040,7 +818,7 @@ John Muschelli
   text-align: left;
 }
 
-#vwhbadlpny .gt_empty_group_heading {
+#eqjywaqlof .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1055,15 +833,15 @@ John Muschelli
   vertical-align: middle;
 }
 
-#vwhbadlpny .gt_from_md > :first-child {
+#eqjywaqlof .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#vwhbadlpny .gt_from_md > :last-child {
+#eqjywaqlof .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#vwhbadlpny .gt_row {
+#eqjywaqlof .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1082,7 +860,7 @@ John Muschelli
   overflow-x: hidden;
 }
 
-#vwhbadlpny .gt_stub {
+#eqjywaqlof .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1095,7 +873,7 @@ John Muschelli
   padding-right: 5px;
 }
 
-#vwhbadlpny .gt_stub_row_group {
+#eqjywaqlof .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1109,15 +887,15 @@ John Muschelli
   vertical-align: top;
 }
 
-#vwhbadlpny .gt_row_group_first td {
+#eqjywaqlof .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#vwhbadlpny .gt_row_group_first th {
+#eqjywaqlof .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#vwhbadlpny .gt_summary_row {
+#eqjywaqlof .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1127,16 +905,16 @@ John Muschelli
   padding-right: 5px;
 }
 
-#vwhbadlpny .gt_first_summary_row {
+#eqjywaqlof .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#vwhbadlpny .gt_first_summary_row.thick {
+#eqjywaqlof .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#vwhbadlpny .gt_last_summary_row {
+#eqjywaqlof .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1146,7 +924,7 @@ John Muschelli
   border-bottom-color: #D3D3D3;
 }
 
-#vwhbadlpny .gt_grand_summary_row {
+#eqjywaqlof .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1156,7 +934,7 @@ John Muschelli
   padding-right: 5px;
 }
 
-#vwhbadlpny .gt_first_grand_summary_row {
+#eqjywaqlof .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1166,7 +944,7 @@ John Muschelli
   border-top-color: #D3D3D3;
 }
 
-#vwhbadlpny .gt_last_grand_summary_row_top {
+#eqjywaqlof .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1176,11 +954,11 @@ John Muschelli
   border-bottom-color: #D3D3D3;
 }
 
-#vwhbadlpny .gt_striped {
+#eqjywaqlof .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#vwhbadlpny .gt_table_body {
+#eqjywaqlof .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1189,7 +967,7 @@ John Muschelli
   border-bottom-color: #D3D3D3;
 }
 
-#vwhbadlpny .gt_footnotes {
+#eqjywaqlof .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1203,7 +981,7 @@ John Muschelli
   border-right-color: #D3D3D3;
 }
 
-#vwhbadlpny .gt_footnote {
+#eqjywaqlof .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1212,7 +990,7 @@ John Muschelli
   padding-right: 5px;
 }
 
-#vwhbadlpny .gt_sourcenotes {
+#eqjywaqlof .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1226,7 +1004,7 @@ John Muschelli
   border-right-color: #D3D3D3;
 }
 
-#vwhbadlpny .gt_sourcenote {
+#eqjywaqlof .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1234,72 +1012,72 @@ John Muschelli
   padding-right: 5px;
 }
 
-#vwhbadlpny .gt_left {
+#eqjywaqlof .gt_left {
   text-align: left;
 }
 
-#vwhbadlpny .gt_center {
+#eqjywaqlof .gt_center {
   text-align: center;
 }
 
-#vwhbadlpny .gt_right {
+#eqjywaqlof .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#vwhbadlpny .gt_font_normal {
+#eqjywaqlof .gt_font_normal {
   font-weight: normal;
 }
 
-#vwhbadlpny .gt_font_bold {
+#eqjywaqlof .gt_font_bold {
   font-weight: bold;
 }
 
-#vwhbadlpny .gt_font_italic {
+#eqjywaqlof .gt_font_italic {
   font-style: italic;
 }
 
-#vwhbadlpny .gt_super {
+#eqjywaqlof .gt_super {
   font-size: 65%;
 }
 
-#vwhbadlpny .gt_footnote_marks {
+#eqjywaqlof .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#vwhbadlpny .gt_asterisk {
+#eqjywaqlof .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#vwhbadlpny .gt_indent_1 {
+#eqjywaqlof .gt_indent_1 {
   text-indent: 5px;
 }
 
-#vwhbadlpny .gt_indent_2 {
+#eqjywaqlof .gt_indent_2 {
   text-indent: 10px;
 }
 
-#vwhbadlpny .gt_indent_3 {
+#eqjywaqlof .gt_indent_3 {
   text-indent: 15px;
 }
 
-#vwhbadlpny .gt_indent_4 {
+#eqjywaqlof .gt_indent_4 {
   text-indent: 20px;
 }
 
-#vwhbadlpny .gt_indent_5 {
+#eqjywaqlof .gt_indent_5 {
   text-indent: 25px;
 }
 
-#vwhbadlpny .katex-display {
+#eqjywaqlof .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#vwhbadlpny div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#eqjywaqlof div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1340,23 +1118,6 @@ John Muschelli
 </div>
 </div>
 </section>
-<section id="mean-number-of-steps-per-day-for-pd" class="slide level2">
-<h2>Mean Number of Steps per Day for PD</h2>
-<p>If you filter for 1368 (95% of a day of “good” minutes), we can estimate the mean/SD number of steps in the PD group:</p>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 1 × 2
-  n_steps_mean n_steps_sd
-         &lt;dbl&gt;      &lt;dbl&gt;
-1        6851.      5558.</code></pre>
-</div>
-</div>
-</section>
-<section id="mean-number-of-steps-per-day-for-pd-1" class="slide level2">
-<h2>Mean Number of Steps per Day for PD</h2>
-<p>Here is the distribution of mean steps/day with good minute filter for PD (mean in red):</p>
-
-<img data-src="emory_files/figure-revealjs/unnamed-chunk-29-1.png" width="960" class="r-stretch"></section>
 <section id="references" class="slide level2 smaller scrollable">
 <h2>References</h2>
 <div class="quarto-auto-generated-content">
@@ -1374,20 +1135,8 @@ John, Dinesh, Qu Tang, Fahd Albinali, and Stephen Intille. 2019. <span>“An Ope
 <div id="ref-karas2022comparison" class="csl-entry" role="listitem">
 Karas, Marta, John Muschelli, Andrew Leroux, Jacek K Urbanek, Amal A Wanigatunga, Jiawei Bai, Ciprian M Crainiceanu, and Jennifer A Schrack. 2022. <span>“Comparison of Accelerometry-Based Measures of Physical Activity: Retrospective Observational Data Analysis Study.”</span> <em>JMIR mHealth and uHealth</em> 10 (7): e38077.
 </div>
-<div id="ref-marea" class="csl-entry" role="listitem">
-Khandelwal, Siddhartha, and Nicholas Wickström. 2017. <span>“Evaluation of the Performance of Accelerometer-Based Gait Event Detection Algorithms in Different Real-World Scenarios Using the <span>MAREA</span> Gait Database.”</span> <em>Gait &amp; Posture</em> 51 (January): 84–90. <a href="https://doi.org/10.1016/j.gaitpost.2016.09.023">https://doi.org/10.1016/j.gaitpost.2016.09.023</a>.
-</div>
 <div id="ref-koffman2024comparing" class="csl-entry" role="listitem">
 Koffman, L, C Crainiceanu, and J Muschelli. 2024. <span>“Comparing Step Counting Algorithms for High-Resolution Wrist Accelerometry Data in <span>NHANES</span> 2011-2014.”</span> <em>Medicine &amp; Science in Sports &amp; Exercise</em>. <a href="https://doi.org/10.1249/MSS.0000000000003616">https://doi.org/10.1249/MSS.0000000000003616</a>.
-</div>
-<div id="ref-koffman2024evaluating" class="csl-entry" role="listitem">
-Koffman, Lily, and John Muschelli. 2024. <span>“Evaluating Step Counting Algorithms on Subsecond Wrist-Worn Accelerometry: A Comparison Using Publicly Available Data Sets.”</span> <em>Journal for the Measurement of Physical Behaviour</em> 7 (1).
-</div>
-<div id="ref-koffman2023fingerprinting" class="csl-entry" role="listitem">
-Koffman, Lily, Yan Zhang, Jaroslaw Harezlak, Ciprian Crainiceanu, and Andrew Leroux. 2023. <span>“Fingerprinting Walking Using Wrist-Worn Accelerometers.”</span> <em>Gait &amp; Posture</em> 103: 92–98.
-</div>
-<div id="ref-clemson_data" class="csl-entry" role="listitem">
-Mattfeld, Ryan, Elliot Jesch, and Adam Hoover. 2017. <span>“A New Dataset for Evaluating Pedometer Performance.”</span> In <em>2017 <span>IEEE</span> <span>International</span> <span>Conference</span> on <span>Bioinformatics</span> and <span>Biomedicine</span> (<span>BIBM</span>)</em>, 865–69. Kansas City, MO: IEEE. <a href="https://doi.org/10.1109/BIBM.2017.8217769">https://doi.org/10.1109/BIBM.2017.8217769</a>.
 </div>
 <div id="ref-neishabouri2022quantification" class="csl-entry" role="listitem">
 Neishabouri, Ali, Joe Nguyen, John Samuelsson, Tyler Guthrie, Matt Biggs, Jeremy Wyatt, Doug Cross, et al. 2022. <span>“Quantification of Acceleration as Activity Counts in <span>ActiGraph</span> Wearable.”</span> <em>Scientific Reports</em> 12 (1): 11958.
@@ -1404,19 +1153,19 @@ Small, Scott R, Shing Chan, Rosemary Walmsley, Lennart von Fritsch, Aidan Acquah
   </div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="emory_files/libs/revealjs/dist/reveal.js"></script>
+  <script src="eba_files/libs/revealjs/dist/reveal.js"></script>
   <!-- reveal.js plugins -->
-  <script src="emory_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="emory_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="emory_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="emory_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="emory_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  <script src="eba_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="eba_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="eba_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="eba_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="eba_files/libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
-  <script src="emory_files/libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="emory_files/libs/revealjs/plugin/search/search.js"></script>
-  <script src="emory_files/libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="emory_files/libs/revealjs/plugin/math/math.js"></script>
+  <script src="eba_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="eba_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="eba_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="eba_files/libs/revealjs/plugin/math/math.js"></script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
   <script>
